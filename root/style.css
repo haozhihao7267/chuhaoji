@@ -1,0 +1,430 @@
+/* ========================================
+    CSS样式文件 - 让网页变得好看
+    CSS的作用是控制网页的外观（颜色、大小、布局等）
+    基本语法：选择器 { 属性: 值; }
+======================================== */
+
+/* ==================== 全局样式 ==================== */
+/* * 表示选择所有元素，这里设置一些通用样式 */
+* {
+    /* margin是外边距，0表示没有外边距 */
+    margin: 0;
+    /* padding是内边距，0表示没有内边距 */
+    padding: 0;
+    /* box-sizing: border-box 让元素的宽高包含内边距和边框 */
+    /* 这样设置宽高更直观，不会因为padding变大 */
+    box-sizing: border-box;
+}
+
+/* body是网页的主体，设置一些基础样式 */
+body {
+    /* font-family 设置字体，优先使用第一个，没有就用下一个 */
+    font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+    /* line-height 设置行高，1.6表示行高是字体大小的1.6倍 */
+    line-height: 1.6;
+    /* color 设置文字颜色 */
+    color: #333;
+    /* background-color 设置背景颜色 */
+    background-color: #f5f5f5;
+}
+
+/* ==================== 导航栏样式 ==================== */
+/* .navbar 表示选择class="navbar"的元素 */
+/* class前面要加点号(.) */
+.navbar {
+    /* display: flex 使用弹性布局，让子元素横向排列 */
+    display: flex;
+    /* justify-content 设置主轴方向的对齐方式 */
+    /* space-between 表示两端对齐，中间留空 */
+    justify-content: space-between;
+    /* align-items 设置交叉轴方向的对齐方式 */
+    /* center 表示居中对齐 */
+    align-items: center;
+    /* padding 设置内边距，四个值分别是：上、右、下、左 */
+    padding: 15px 50px;
+    /* background-color 设置背景颜色 */
+    background-color: #2c3e50;
+    /* position: fixed 让导航栏固定在页面顶部 */
+    position: fixed;
+    /* top: 0 距离顶部0像素 */
+    top: 0;
+    /* left: 0 距离左边0像素 */
+    left: 0;
+    /* right: 0 距离右边0像素 */
+    right: 0;
+    /* z-index 设置层级，数值越大越在上层 */
+    /* 这里设置100是为了确保导航栏在其他元素上面 */
+    z-index: 100;
+}
+
+/* logo区域样式 */
+.logo a {
+    /* font-size 设置字体大小，单位px是像素 */
+    font-size: 24px;
+    /* font-weight 设置字体粗细，bold是粗体 */
+    font-weight: bold;
+    /* text-decoration 设置文字装饰，none表示没有下划线 */
+    text-decoration: none;
+    color: #fff;
+}
+
+/* 导航链接列表样式 */
+.nav-links {
+    /* display: flex 让列表项横向排列 */
+    display: flex;
+    /* list-style: none 去掉列表前面的小圆点 */
+    list-style: none;
+    /* gap 设置子元素之间的间距 */
+    gap: 30px;
+}
+
+/* 导航链接文字样式 */
+.nav-links a {
+    /* text-decoration: none 去掉链接下划线 */
+    text-decoration: none;
+    color: #fff;
+    /* font-size 设置字体大小 */
+    font-size: 16px;
+    /* transition 设置过渡动画，让颜色变化更平滑 */
+    /* 0.3s表示动画持续0.3秒 */
+    transition: color 0.3s;
+}
+
+/* 鼠标悬停时链接变色 */
+/* :hover 是伪类，表示鼠标悬停时的状态 */
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* ==================== 首页横幅样式 ==================== */
+/* 首页大横幅区域 */
+.hero {
+    /* height: 100vh 表示高度占满整个屏幕 */
+    /* vh是视窗高度的百分比，100vh就是100%的视窗高度 */
+    height: 100vh;
+    /* display: flex 使用弹性布局 */
+    display: flex;
+    /* flex-direction: column 让子元素纵向排列 */
+    flex-direction: column;
+    /* justify-content: center 让内容垂直居中 */
+    justify-content: center;
+    /* align-items: center 让内容水平居中 */
+    align-items: center;
+    /* text-align: center 让文字居中 */
+    text-align: center;
+    /* background 设置背景 */
+    /* linear-gradient 创建渐变背景 */
+    /* 从左上角(#667eea)渐变到右下角(#764ba2) */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    /* padding-top: 60px 防止内容被固定导航栏遮挡 */
+    padding-top: 60px;
+}
+
+/* 横幅标题样式 */
+.hero h1 {
+    font-size: 48px;
+    /* margin-bottom 设置下边距 */
+    margin-bottom: 20px;
+}
+
+/* 横幅段落样式 */
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* CTA按钮样式（Call To Action，号召用户行动的按钮） */
+.cta-button {
+    /* padding 设置内边距：上下15px，左右30px */
+    padding: 15px 30px;
+    font-size: 18px;
+    /* border: none 去掉边框 */
+    border: none;
+    /* border-radius 设置圆角，让按钮看起来更圆润 */
+    border-radius: 5px;
+    /* background-color 设置背景颜色 */
+    background-color: #fff;
+    color: #667eea;
+    /* cursor: pointer 鼠标悬停时显示手型光标 */
+    cursor: pointer;
+    /* font-weight: bold 字体加粗 */
+    font-weight: bold;
+    /* transition 设置过渡动画 */
+    transition: all 0.3s;
+}
+
+/* 鼠标悬停时按钮效果 */
+.cta-button:hover {
+    /* transform: scale(1.05) 放大到1.05倍 */
+    transform: scale(1.05);
+    /* box-shadow 添加阴影效果 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== 关于我们区域样式 ==================== */
+.about-section {
+    /* padding 设置内边距：上下80px，左右50px */
+    padding: 80px 50px;
+    /* background-color 设置背景颜色 */
+    background-color: #fff;
+}
+
+/* 区域标题样式 */
+.about-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #2c3e50;
+}
+
+/* 关于我们内容容器 */
+.about-content {
+    /* display: flex 让子元素横向排列 */
+    display: flex;
+    /* align-items: center 让子元素垂直居中 */
+    align-items: center;
+    /* max-width 设置最大宽度 */
+    max-width: 1200px;
+    /* margin: 0 auto 让容器水平居中 */
+    margin: 0 auto;
+    /* gap 设置子元素之间的间距 */
+    gap: 50px;
+}
+
+/* 关于我们文字区域 */
+.about-text {
+    /* flex: 1 表示占据剩余空间 */
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 16px;
+    /* margin-bottom 设置段落之间的间距 */
+    margin-bottom: 15px;
+    /* color 设置文字颜色 */
+    color: #666;
+}
+
+/* 关于我们图片区域 */
+.about-image {
+    flex: 1;
+    /* text-align: center 让图片居中 */
+    text-align: center;
+}
+
+.about-image img {
+    /* max-width: 100% 图片最大宽度不超过容器 */
+    max-width: 100%;
+    /* border-radius 设置圆角 */
+    border-radius: 10px;
+    /* box-shadow 添加阴影效果 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== 服务项目区域样式 ==================== */
+.services-section {
+    padding: 80px 50px;
+    background-color: #f9f9f9;
+}
+
+.services-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #2c3e50;
+}
+
+/* 服务卡片容器 */
+.services-container {
+    /* display: flex 让卡片横向排列 */
+    display: flex;
+    /* justify-content: center 让卡片居中 */
+    justify-content: center;
+    /* flex-wrap: wrap 允许卡片换行（当屏幕太窄时） */
+    flex-wrap: wrap;
+    /* gap 设置卡片之间的间距 */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 单个服务卡片样式 */
+.service-card {
+    /* background-color 设置背景颜色 */
+    background-color: #fff;
+    /* padding 设置内边距 */
+    padding: 40px 30px;
+    /* border-radius 设置圆角 */
+    border-radius: 10px;
+    /* text-align: center 让内容居中 */
+    text-align: center;
+    /* box-shadow 添加阴影 */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    /* min-width 设置最小宽度 */
+    min-width: 280px;
+    /* max-width 设置最大宽度 */
+    max-width: 350px;
+    /* flex: 1 让卡片平均分配空间 */
+    flex: 1;
+    /* transition 设置过渡动画 */
+    transition: all 0.3s;
+}
+
+/* 鼠标悬停时卡片效果 */
+.service-card:hover {
+    /* transform: translateY(-10px) 向上移动10像素 */
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* 服务图标样式 */
+.service-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+/* 服务卡片标题样式 */
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* 服务卡片描述样式 */
+.service-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* ==================== 联系我们区域样式 ==================== */
+.contact-section {
+    padding: 80px 50px;
+    background-color: #fff;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #2c3e50;
+}
+
+/* 联系表单样式 */
+.contact-form {
+    /* max-width 设置最大宽度 */
+    max-width: 600px;
+    /* margin: 0 auto 让表单居中 */
+    margin: 0 auto;
+}
+
+/* 表单组样式（每个输入项） */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* 表单标签样式 */
+.form-group label {
+    /* display: block 让标签独占一行 */
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 输入框和文本域通用样式 */
+.form-group input,
+.form-group textarea {
+    /* width: 100% 宽度占满容器 */
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    /* outline: none 去掉选中时的边框 */
+    outline: none;
+    /* transition 设置过渡动画 */
+    transition: border-color 0.3s;
+}
+
+/* 输入框获得焦点时的样式 */
+/* :focus 是伪类，表示元素获得焦点时的状态 */
+.form-group input:focus,
+.form-group textarea:focus {
+    /* border-color 设置边框颜色 */
+    border-color: #667eea;
+}
+
+/* 提交按钮样式 */
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #667eea;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+/* 鼠标悬停时提交按钮效果 */
+.submit-button:hover {
+    background-color: #764ba2;
+}
+
+/* ==================== 页脚样式 ==================== */
+.footer {
+    /* padding 设置内边距 */
+    padding: 30px;
+    text-align: center;
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+/* ==================== 响应式设计 ==================== */
+/* 当屏幕宽度小于768像素时（手机和平板）应用以下样式 */
+/* @media 是媒体查询，可以根据屏幕大小应用不同样式 */
+@media screen and (max-width: 768px) {
+    /* 导航栏在小屏幕上的样式 */
+    .navbar {
+        /* flex-direction: column 让子元素纵向排列 */
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    /* 导航链接在小屏幕上的样式 */
+    .nav-links {
+        margin-top: 15px;
+        gap: 15px;
+    }
+
+    /* 横幅标题在小屏幕上的样式 */
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    /* 横幅段落在小屏幕上的样式 */
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* 关于我们内容在小屏幕上的样式 */
+    .about-content {
+        /* flex-direction: column 让子元素纵向排列 */
+        flex-direction: column;
+    }
+
+    /* 各区域在小屏幕上的内边距 */
+    .about-section,
+    .services-section,
+    .contact-section {
+        padding: 50px 20px;
+    }
+
+    /* 服务卡片在小屏幕上的样式 */
+    .service-card {
+        min-width: 100%;
+    }
+}
