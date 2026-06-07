@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- ========================================
+    这是一个网页的基础声明
+    告诉浏览器这是一个HTML5标准的网页
+======================================== -->
+<html lang="zh-CN">
+<!-- lang="zh-CN" 表示这个网页的主要内容是中文 -->
+
+<head>
+    <!-- ========================================
+        head标签里面放的是网页的"幕后信息"
+        这些内容不会直接显示在页面上
+        但对浏览器和搜索引擎很重要
+    ======================================== -->
+
+    <!-- 设置网页的字符编码为UTF-8，这样才能正确显示中文 -->
+    <meta charset="UTF-8">
+
+    <!-- 让网页在手机上也能正常显示，不会缩放太小 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 网页标题，会显示在浏览器标签页上 -->
+    <title>我的展示网站</title>
+
+    <!-- 引入外部CSS样式文件，让网页变得好看 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ========================================
+        body标签里面放的是网页的"可见内容"
+        用户看到的所有东西都在这里
+    ======================================== -->
+
+    <!-- ==================== 导航栏区域 ==================== -->
+    <!-- nav是navigation的缩写，专门用来放导航链接 -->
+    <nav class="navbar">
+        <!-- logo区域，点击可以回到首页 -->
+        <div class="logo">
+            <a href="#">我的网站</a>
+        </div>
+
+        <!-- 导航菜单，ul是无序列表，li是列表项 -->
+        <ul class="nav-links">
+            <!-- href="#"表示链接暂时不跳转到任何页面 -->
+            <li><a href="#home">首页</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#services">服务项目</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- ==================== 首页横幅区域 ==================== -->
+    <!-- header通常用于页面顶部的大标题区域 -->
+    <header id="home" class="hero">
+        <!-- h1是一级标题，一个页面通常只有一个h1 -->
+        <h1>欢迎来到我的网站</h1>
+        <!-- p是段落标签，用来放普通文字 -->
+        <p>这是一个简单易懂的展示型网站</p>
+        <!-- button是按钮，用户可以点击 -->
+        <button class="cta-button">了解更多</button>
+    </header>
+
+    <!-- ==================== 关于我们区域 ==================== -->
+    <!-- section用来划分页面的不同区块 -->
+    <section id="about" class="about-section">
+        <!-- h2是二级标题，重要性仅次于h1 -->
+        <h2>关于我们</h2>
+
+        <!-- div是一个容器，用来把内容分组 -->
+        <div class="about-content">
+            <!-- 左侧文字介绍 -->
+            <div class="about-text">
+                <p>我们是一家专注于提供优质服务的公司。我们的团队拥有丰富的经验，致力于为客户创造价值。</p>
+                <p>无论您有什么需求，我们都能为您提供专业的解决方案。</p>
+            </div>
+            <!-- 右侧图片展示 -->
+            <div class="about-image">
+                <!-- img是图片标签，src是图片地址，alt是图片描述（如果图片加载失败会显示这个文字） -->
+                <img src="https://via.placeholder.com/400x300" alt="关于我们的图片">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 服务项目区域 ==================== -->
+    <section id="services" class="services-section">
+        <h2>我们的服务</h2>
+
+        <!-- 服务卡片容器 -->
+        <div class="services-container">
+            <!-- 服务卡片1 -->
+            <div class="service-card">
+                <!-- 这里可以放图标，暂时用文字代替 -->
+                <div class="service-icon">🎨</div>
+                <h3>设计服务</h3>
+                <p>专业的UI/UX设计，让您的产品更加美观易用</p>
+            </div>
+
+            <!-- 服务卡片2 -->
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>开发服务</h3>
+                <p>高质量的网站和应用程序开发，满足您的各种需求</p>
+            </div>
+
+            <!-- 服务卡片3 -->
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>移动应用</h3>
+                <p>跨平台移动应用开发，覆盖iOS和Android系统</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 联系我们区域 ==================== -->
+    <section id="contact" class="contact-section">
+        <h2>联系我们</h2>
+
+        <!-- form是表单，用来收集用户输入的信息 -->
+        <form class="contact-form">
+            <!-- 表单组：姓名输入 -->
+            <div class="form-group">
+                <!-- label是标签，for属性关联对应的input -->
+                <label for="name">姓名</label>
+                <!-- input是输入框，type="text"表示文本输入 -->
+                <!-- placeholder是占位文字，提示用户该输入什么 -->
+                <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+            </div>
+
+            <!-- 表单组：邮箱输入 -->
+            <div class="form-group">
+                <label for="email">邮箱</label>
+                <!-- type="email"会自动验证邮箱格式 -->
+                <input type="email" id="email" name="email" placeholder="请输入您的邮箱" required>
+            </div>
+
+            <!-- 表单组：留言输入 -->
+            <div class="form-group">
+                <label for="message">留言</label>
+                <!-- textarea是多行文本输入框，适合输入较长的内容 -->
+                <!-- rows表示默认显示几行 -->
+                <textarea id="message" name="message" rows="5" placeholder="请输入您的留言" required></textarea>
+            </div>
+
+            <!-- 提交按钮 -->
+            <button type="submit" class="submit-button">提交留言</button>
+        </form>
+    </section>
+
+    <!-- ==================== 页脚区域 ==================== -->
+    <!-- footer是页脚，通常放版权信息、联系方式等 -->
+    <footer class="footer">
+        <p>&copy; 2024 我的网站. 保留所有权利。</p>
+        <!-- &copy; 是版权符号 © 的HTML代码 -->
+    </footer>
+
+    <!-- ==================== JavaScript脚本 ==================== -->
+    <!-- 引入外部JavaScript文件，让网页有交互功能 -->
+    <script src="script.js"></script>
+</body>
+
+</html>
